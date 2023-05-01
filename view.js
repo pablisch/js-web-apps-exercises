@@ -10,6 +10,13 @@ class View {
     newP.textContent = `This paragraph is ${text}`;
     this.mainContainerEl.append(newP);
   }
+
+  clearParagraphs() {
+    const paras = document.querySelectorAll('p');
+    paras.forEach(para => {
+      para.remove();
+    })
+  }
 }
 
 
