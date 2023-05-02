@@ -14,17 +14,20 @@ class MessageView {
   }
 
   displayMessage() {
+    const userInputEl = document.querySelector('#message-input');
     const newPEl = document.createElement('p');
     newPEl.id = 'message';
-    newPEl.textContent = 'I am a teapot';
+    newPEl.textContent = userInputEl.value;
     this.mainContainerEl.append(newPEl);
-    console.log('Thanks for clicking me!');
+
+    document.querySelector('#message-input').value = '' // resets the user input field
+    // console.log('Thanks for clicking me!');
   }
 
   hideMessage() {
     const pEls = document.querySelectorAll('p');
     pEls.forEach((p) => p.remove());
-    console.log("... and now I'm gone!");
+    // console.log("... and now I'm gone!");
   }
 }
 

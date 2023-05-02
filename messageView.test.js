@@ -14,10 +14,25 @@ describe('MessageView', () => {
 
   it('clicks the show button', () => {
     const showButtonEl = document.querySelector('#show-message-button');
+    const userInputEl = document.querySelector('#message-input');
+    
+    userInputEl.value = "Hello Test";
     showButtonEl.click();
 
     expect(document.querySelector('#message')).not.toBeNull();
-    expect(document.querySelector('#message').textContent).toEqual("I am a teapot");
+    expect(document.querySelector('#message').textContent).toEqual("Hello Test");
+  });
+
+  it('clicking the show button twice does not repeat the message', () => {
+    const showButtonEl = document.querySelector('#show-message-button');
+    const userInputEl = document.querySelector('#message-input');
+
+    userInputEl.value = "Hello Test";
+    showButtonEl.click();
+
+    expect(document.querySelector('#message')).not.toBeNull();
+    expect(document.querySelector('#message').textContent).toEqual("Hello Test");
+    expect(userInputEl.value).toEqual("");
   });
 
   it('clicks the hide button', () => {
