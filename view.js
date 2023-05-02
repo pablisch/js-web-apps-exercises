@@ -2,7 +2,7 @@ class View {
   constructor() {
     this.mainContainerEl = document.querySelector('#main-container');
 
-    console.log(this.mainContainerEl);
+    // console.log(this.mainContainerEl);
   }
 
   addParagraph(text) {
