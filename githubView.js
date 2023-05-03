@@ -16,7 +16,7 @@ class GithubView {
     });
   }
 
-  display(repoData) { // incomplete method to display data
+  display(repoData) { 
     const h3NameEl = document.querySelector('#repo-name');
     const pDescriptionEl = document.querySelector('#repo-description');
     const imgEl = document.querySelector('#repo-image');

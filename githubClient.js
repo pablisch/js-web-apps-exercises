@@ -1,4 +1,5 @@
 class GithubClient {
+  
   getRepoInfo(repoName, callback) {
     fetch('https://api.github.com/repos/' + repoName)
       .then((response) => response.json())
