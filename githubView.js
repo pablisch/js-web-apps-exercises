@@ -19,11 +19,13 @@ class GithubView {
   display(repoData) { // incomplete method to display data
     const h3NameEl = document.querySelector('#repo-name');
     const pDescriptionEl = document.querySelector('#repo-description');
+    const imgEl = document.querySelector('#repo-image');
     
-    console.log(`name = ${repoData.name}`)
     this.model.getRepoInfo();
     h3NameEl.textContent = repoData.name;
     pDescriptionEl.textContent = repoData.description;
+    console.log(repoData.organization.avatar_url)
+    imgEl.src = repoData.organization.avatar_url;
   }
 }
 
